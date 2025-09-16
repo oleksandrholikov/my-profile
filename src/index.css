@@ -1,13 +1,18 @@
 @import "tailwindcss";
-
-:root {
-  
-}
 body {
-  margin: 0;
-  display: flex;
+  margin: 0;  
   place-items: center;
-  min-width: 320px;
+  background-color: #1E1E1E;
+}
+#root{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  margin: auto;
+  max-width: 1440px;
   min-height: 100vh;
+  max-height: 900px;
+  color: #D4D4D4;  
 }
 
