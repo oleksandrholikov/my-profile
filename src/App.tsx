@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import MainPage from '@pages/MainPage';
 
 
 function App() {
@@ -6,7 +7,7 @@ function App() {
 
   return (
     <>
-      
+      <MainPage/>
     </>
   )
 }
