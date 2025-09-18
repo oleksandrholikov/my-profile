@@ -14,6 +14,9 @@ import IconPython from '@assets/icons/icon-python.png'
 import BgImage from '@assets/images/BG-group.png'
 
 import NavBar from '@elements/NavBar'
+import MainSection from '@elements/MainSection'
+
+
 
 export default function MainPage(){
     const [activTab, setActiveTab] = useState<string>('welcome');
@@ -65,15 +68,6 @@ export default function MainPage(){
                     <span className="font-bold text-[25px]">EXPLORER</span>
                     <span className="flex items-center text-[25px] hover:cursor-pointer hover:text-[#fff]"><img src={IconArrowDown} alt="Icon Arrow Down" className="w-[35px] h-[17px] rotate-180"/>Portfolio</span>
                     <NavBar direction={true} activTab={activTab} setActiveTab={setActiveTab}/>
-                    {/* <ul className="flex flex-col space-y-1 px-[40px]">
-                        <li className="flex space-x-1 hover:bg-[#333333] px-1 hover:cursor-pointer hover:text-[#fff] active:bg-[#333333]"><img src={IconVScode} alt="VS code icon" className="mr-2"/>Welcome</li>
-                        <li className="flex space-x-1 hover:bg-[#333333] px-1 hover:cursor-pointer hover:text-[#fff] active:bg-[#333333]"><img src={IconHTML} alt="HTML icon" className="mr-2" />about.html</li>
-                        <li className="flex space-x-1 hover:bg-[#333333] px-1 hover:cursor-pointer hover:text-[#fff] active:bg-[#333333]"><img src={IconScss} alt="Scss icon" className="mr-2"/>skills.scss</li>
-                        <li className="flex space-x-1 hover:bg-[#333333] px-1 hover:cursor-pointer hover:text-[#fff] active:bg-[#333333]"><img src={IconJson} alt="Json icon" className="mr-2"/>projects.json</li>
-                        <li className="flex space-x-1 hover:bg-[#333333] px-1 hover:cursor-pointer hover:text-[#fff] active:bg-[#333333]"><img src={IconPython} alt="Python icon" className="mr-2"/>contact.py</li>
-                    </ul> */}
-
-
                 </div>
                 <div className="flex flex-col w-full">
                     {/* NavHeader */}
@@ -82,7 +76,9 @@ export default function MainPage(){
                     <div
                         className=" w-full h-full bg-[#242424] bg-cover bg-center"
                         style={{backgroundImage:`url(${BgImage})`}}
-                    ></div>
+                    >
+                        {activTab === 'welcome' && <MainSection />}
+                    </div>
 
                 </div>
             </div>
