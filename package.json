@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.13",
+    "framer-motion": "^12.23.15",
     "path": "^0.12.7",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-syntax-highlighter": "^15.6.6",
     "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
