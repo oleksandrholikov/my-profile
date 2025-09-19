@@ -18,8 +18,8 @@ export default function Navbar({direction, activTab, setActiveTab }: NavbarProps
         <ul className={`flex ${direction ? "flex-col w-full space-y-2" : "flex-row justify-start"}   text-[20px]`}
         >
          <li
-        className={`flex space-x-1 px-2 hover:bg-[#333333] hover:cursor-pointer hover:text-[#fff] active:bg-[#333333] ${
-          activTab === "welcome" ? "bg-[#333333] text-white" : ""
+        className={`flex space-x-1 px-2 hover:bg-[#292929] hover:cursor-pointer hover:text-[#fff] active:bg-[#292929] ${
+          activTab === "welcome" ? "bg-[#292929] text-white" : ""
         }`}
         onClick={() => setActiveTab("welcome")}
       >
@@ -27,8 +27,8 @@ export default function Navbar({direction, activTab, setActiveTab }: NavbarProps
         Welcome
       </li>
       <li
-        className={`flex space-x-1 px-2 hover:bg-[#333333] hover:cursor-pointer hover:text-[#fff] active:bg-[#333333] ${
-          activTab === "about" ? "bg-[#333333] text-white" : ""
+        className={`flex space-x-1 px-2 hover:bg-[#292929] hover:cursor-pointer hover:text-[#fff] active:bg-[#292929] ${
+          activTab === "about" ? "bg-[#292929] text-white" : ""
         }`}
         onClick={() => setActiveTab("about")}
       >
@@ -36,8 +36,8 @@ export default function Navbar({direction, activTab, setActiveTab }: NavbarProps
         about.html
       </li>
       <li
-        className={`flex space-x-1 px-2 hover:bg-[#333333] hover:cursor-pointer hover:text-[#fff] active:bg-[#333333] ${
-          activTab === "skills" ? "bg-[#333333] text-white" : ""
+        className={`flex space-x-1 px-2 hover:bg-[#292929] hover:cursor-pointer hover:text-[#fff] active:bg-[#292929] ${
+          activTab === "skills" ? "bg-[#292929] text-white" : ""
         }`}
         onClick={() => setActiveTab("skills")}
       >
@@ -45,8 +45,8 @@ export default function Navbar({direction, activTab, setActiveTab }: NavbarProps
         skills.scss
       </li>
       <li
-        className={`flex space-x-1 px-2 hover:bg-[#333333] hover:cursor-pointer hover:text-[#fff] active:bg-[#333333] ${
-          activTab === "projects" ? "bg-[#333333] text-white" : ""
+        className={`flex space-x-1 px-2 hover:bg-[#292929] hover:cursor-pointer hover:text-[#fff] active:bg-[#292929] ${
+          activTab === "projects" ? "bg-[#292929] text-white" : ""
         }`}
         onClick={() => setActiveTab("projects")}
       >
@@ -54,8 +54,8 @@ export default function Navbar({direction, activTab, setActiveTab }: NavbarProps
         projects.json
       </li>
       <li
-        className={`flex space-x-1 px-2 hover:bg-[#333333] hover:cursor-pointer hover:text-[#fff] active:bg-[#333333] ${
-          activTab === "contact" ? "bg-[#333333] text-white" : ""
+        className={`flex space-x-1 px-2 hover:bg-[#292929] hover:cursor-pointer hover:text-[#fff] active:bg-[#292929] ${
+          activTab === "contact" ? "bg-[#292929] text-white" : ""
         }`}
         onClick={() => setActiveTab("contact")}
       >

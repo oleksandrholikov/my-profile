@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import IconVScode from '@assets/icons/icon-vscode.png'
 import IconFile from '@assets/icons/icon-files.png'
 import IconCode from '@assets/icons/icon-code.png'
@@ -7,10 +8,6 @@ import IconLetter from '@assets/icons/icon-letter.png'
 import IconLinkEdin from '@assets/icons/icon-linkedin.png'
 import IconProfil from '@assets/icons/icon-profile.png'
 import IconArrowDown from '@assets/icons/icon-arrow-outlined.png'
-import IconHTML from '@assets/icons/icon-html.png'
-import IconScss from '@assets/icons/icon-scss.png'
-import IconJson from '@assets/icons/icon-type-json.png'
-import IconPython from '@assets/icons/icon-python.png'
 import BgImage from '@assets/images/BG-group.png'
 
 import NavBar from '@elements/NavBar'
@@ -20,6 +17,7 @@ import MainSection from '@elements/MainSection'
 
 export default function MainPage(){
     const [activTab, setActiveTab] = useState<string>('welcome');
+    const [dropDown, setDropDown] =useState<Boolean>(true)
 
 
 
@@ -66,18 +64,36 @@ export default function MainPage(){
                 {/* SideNav */}
                 <div className="flex flex-col w-[300px] justify-start items-start p-[10px] text-[#D4D4D4]">
                     <span className="font-bold text-[25px]">EXPLORER</span>
-                    <span className="flex items-center text-[25px] hover:cursor-pointer hover:text-[#fff]"><img src={IconArrowDown} alt="Icon Arrow Down" className="w-[35px] h-[17px] rotate-180"/>Portfolio</span>
-                    <NavBar direction={true} activTab={activTab} setActiveTab={setActiveTab}/>
+                    <span className="flex items-center text-[25px] hover:cursor-pointer hover:text-[#fff]"
+                        onClick={() => setDropDown(!dropDown)}
+                    ><img src={IconArrowDown} alt="Icon Arrow Down" className ={`w-[35px] h-[17px] ${dropDown ? 'rotate-180' : ''} duration-200`}/>Portfolio</span>
+                    <AnimatePresence>
+                        {dropDown && (
+                        <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3, ease: "easeInOut" }}
+                            className="overflow-hidden w-full"
+                        >
+                            <NavBar
+                            direction={true}
+                            activTab={activTab}
+                            setActiveTab={setActiveTab}
+                            />
+                        </motion.div>
+                        )}
+                    </AnimatePresence>
                 </div>
                 <div className="flex flex-col w-full">
                     {/* NavHeader */}
                         <NavBar direction={false} activTab={activTab} setActiveTab={setActiveTab} />
                     {/* MainBody */}
                     <div
-                        className=" w-full h-full bg-[#242424] bg-cover bg-center"
+                        className="w-full h-full bg-[#242424] bg-cover bg-center"
                         style={{backgroundImage:`url(${BgImage})`}}
                     >
-                        {activTab === 'welcome' && <MainSection />}
+                        {activTab === 'welcome' && <MainSection btn={setActiveTab}/>}
                     </div>
 
                 </div>
