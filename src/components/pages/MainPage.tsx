@@ -12,6 +12,8 @@ import BgImage from '@assets/images/BG-group.png'
 
 import NavBar from '@elements/NavBar'
 import MainSection from '@elements/MainSection'
+import AboutSection from "@elements/AboutSection";
+
 
 
 
@@ -90,10 +92,11 @@ export default function MainPage(){
                         <NavBar direction={false} activTab={activTab} setActiveTab={setActiveTab} />
                     {/* MainBody */}
                     <div
-                        className="w-full h-full bg-[#242424] bg-cover bg-center"
+                        className="w-full h-[870px] bg-[#242424] bg-cover bg-center"
                         style={{backgroundImage:`url(${BgImage})`}}
                     >
                         {activTab === 'welcome' && <MainSection btn={setActiveTab}/>}
+                        {activTab === 'about' && <AboutSection />}
                     </div>
 
                 </div>
