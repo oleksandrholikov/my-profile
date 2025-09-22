@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+#My files
+
+
+src/components/elements/Test.tsx
+src/components/elements/Path.tsx
