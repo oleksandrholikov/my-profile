@@ -11,8 +11,10 @@ import IconArrowDown from '@assets/icons/icon-arrow-outlined.png'
 import BgImage from '@assets/images/BG-group.png'
 
 import NavBar from '@elements/NavBar'
-import MainSection from '@elements/MainSection'
-import AboutSection from "@elements/AboutSection";
+import MainSection from '@/components/elements/section/MainSection'
+import AboutSection from "@/components/elements/section/AboutSection";
+import SkillsSection from "@/components/elements/section/SkillsSection";
+
 
 
 
@@ -97,6 +99,7 @@ export default function MainPage(){
                     >
                         {activTab === 'welcome' && <MainSection btn={setActiveTab}/>}
                         {activTab === 'about' && <AboutSection />}
+                        {activTab === 'skills' && <SkillsSection />}
                     </div>
 
                 </div>
