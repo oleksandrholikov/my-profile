@@ -14,6 +14,8 @@ import NavBar from '@elements/NavBar'
 import MainSection from '@/components/elements/section/MainSection'
 import AboutSection from "@/components/elements/section/AboutSection";
 import SkillsSection from "@/components/elements/section/SkillsSection";
+import ProjectSection from "@/components/elements/section/ProjectSection";
+
 
 
 
@@ -100,6 +102,7 @@ export default function MainPage(){
                         {activTab === 'welcome' && <MainSection btn={setActiveTab}/>}
                         {activTab === 'about' && <AboutSection />}
                         {activTab === 'skills' && <SkillsSection />}
+                        {activTab === 'projects' && <ProjectSection />}
                     </div>
 
                 </div>
