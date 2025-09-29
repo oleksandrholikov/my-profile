@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import IconVScode from '@assets/icons/icon-vscode.png'
 import IconFile from '@assets/icons/icon-files.png'
@@ -15,6 +15,8 @@ import MainSection from '@/components/elements/section/MainSection'
 import AboutSection from "@/components/elements/section/AboutSection";
 import SkillsSection from "@/components/elements/section/SkillsSection";
 import ProjectSection from "@/components/elements/section/ProjectSection";
+import ContactSection from "@/components/elements/section/ContactSection";
+
 
 
 
@@ -103,6 +105,7 @@ export default function MainPage(){
                         {activTab === 'about' && <AboutSection />}
                         {activTab === 'skills' && <SkillsSection />}
                         {activTab === 'projects' && <ProjectSection />}
+                        {activTab === 'contact' && <ContactSection/>}
                     </div>
 
                 </div>
