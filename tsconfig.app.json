@@ -14,7 +14,8 @@
       "@elements/*": ["src/components/elements/*"],
       "@utils/*": ["src/utils/*"],
       "@pages/*": ["src/components/pages/*"],
-      "@types/*": ["src/types/*"],     
+      "@types/*": ["src/types/*"], 
+      "@contexts/*": ["src/contexts/*"]    
     },
     "types": ["node"],
     /* Bundler mode */
