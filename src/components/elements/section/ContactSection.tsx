@@ -1,9 +1,14 @@
 import { useEffect, useRef }  from "react"
 import { gsap} from "gsap"
 import { SplitText } from "gsap/SplitText";
+import {useSendEmailForm} from "@contexts/SendEmailContext"
+
 
 export default function ContactSection(){
     const textRef = useRef<HTMLParagraphElement | null>(null);
+    const {setIsOpen} = useSendEmailForm()
+
+
 
     useEffect(()=>{
         const text = textRef.current
@@ -22,7 +27,7 @@ export default function ContactSection(){
         <div className="w-full h-full flex flex-col items-center justify-start p-6 gap-4">
             <h2 className="text-5xl font-bold text-[#ED816C]">Contact me</h2>
             <p ref={textRef}  className="text-xl text-white max-w-[470px]" >Building a quality product is always a result of collaboration. If you're looking for a web developer who is detail-oriented and ready to work together to achieve your goals, let's connect.</p>
-            <div className="border border-t-4 border-[#ED816C] w-[610px] font-mono text-base leading-relaxed text-gray-200 backdrop-blur-sm">
+            <div className="border border-t-4 border-[#ED816C] w-[610px] font-mono text-base leading-relaxed text-gray-200 backdrop-blur-sm shadow-xl">
                 <div className="flex">                    
                     <div className="bg-[#252526] text-gray-500 text-right pr-5 pl-3 select-none text-base">
                     {[...Array(10)].map((_, i) => (
@@ -77,7 +82,11 @@ export default function ContactSection(){
                     </pre>
                 </div>
             </div>
-
+            <div>
+                <button className="flex items-center justify-evenly text-2xl font-semibold text-white w-xs h-[45px] px-3 rounded-4xl bg-[#6A9955] hover:cursor-pointer hover:bg-[#517c3e]"
+                    onClick={()=>setIsOpen(true)}
+                >Send Message</button>
+            </div>           
         </div>
     )
 }

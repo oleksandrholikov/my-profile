@@ -16,7 +16,8 @@ import AboutSection from "@/components/elements/section/AboutSection";
 import SkillsSection from "@/components/elements/section/SkillsSection";
 import ProjectSection from "@/components/elements/section/ProjectSection";
 import ContactSection from "@/components/elements/section/ContactSection";
-
+import SendEmailForm from "@elements/bloks/SendSmsForm"
+import {useSendEmailForm} from "@contexts/SendEmailContext"
 
 
 
@@ -26,6 +27,7 @@ import ContactSection from "@/components/elements/section/ContactSection";
 export default function MainPage(){
     const [activTab, setActiveTab] = useState<string>('welcome');
     const [dropDown, setDropDown] =useState<Boolean>(true)
+    const {setIsOpen} = useSendEmailForm()
 
 
 
@@ -59,14 +61,35 @@ export default function MainPage(){
                 {/* SideBar */}
                 <div  className="flex flex-col w-[70px] justify-between items-center bg-[#252526]">
                     <div className="flex flex-col w-[70px]">
-                        <div className="hover:bg-[#333333] active:bg-[#333333]"><img src={IconFile} alt="Icon File" className="w-full" /></div>
-                        <div className="hover:bg-[#333333] active:bg-[#333333]"><img src={IconCode} alt="Icon Code" className="w-full" /></div>
+                        <div className="hover:bg-[#333333] active:bg-[#333333]"
+                            title="Go to My Projects"
+                            onClick={() => setActiveTab('projects')}
+                        ><img src={IconFile} alt="Icon File" className="w-full" /></div>
+                        <div className="hover:bg-[#333333] active:bg-[#333333]"
+                            title="Go to my Skills"
+                            onClick={() => setActiveTab('skills')}
+                        ><img src={IconCode} alt="Icon Code" className="w-full" /></div>
                     </div>
                     <div className="flex flex-col w-[70px]">
-                        <div className="hover:bg-[#333333] active:bg-[#333333]"><img src={IconGit} alt="Icon Git" className="w-full" /></div>
-                        <div className="hover:bg-[#333333] active:bg-[#333333]"><img src={IconLinkEdin} alt="Icon LinkEdin" className="w-full" /></div>
-                        <div className="hover:bg-[#333333] active:bg-[#333333]"><img src={IconLetter} alt="Icon contact me" className="w-full" /></div>
-                        <div className="hover:bg-[#333333] active:bg-[#333333]"><img src={IconProfil} alt="Icon my CV" className="w-full" /></div>
+                        <a className="hover:bg-[#333333] active:bg-[#333333]"
+                            href="https://github.com/oleksandrholikov"
+                            target="_blank"
+                            title="Go to My GitHub"
+                        ><img src={IconGit} alt="Icon Git" className="w-full" /></a>
+                        <a className="hover:bg-[#333333] active:bg-[#333333]"
+                            href="https://linkedin.com/in/oleksandr-holikov"
+                            target="_blank"
+                            title="Go to My LinkEdin"
+                        ><img src={IconLinkEdin} alt="Icon LinkEdin" className="w-full" /></a>
+                        <div className="hover:bg-[#333333] active:bg-[#333333]"
+                            onClick={()=>setIsOpen(true)}                       
+                            title="Send me a message"
+                            ><img src={IconLetter} alt="Icon contact me" className="w-full" /></div>
+                        <a className="hover:bg-[#333333] active:bg-[#333333]"
+                            href="public/files/CV-HOLIKOV-Oleksandr.pdf"
+                            target="_blank"
+                            title="Go to My CV"
+                        ><img src={IconProfil} alt="Icon my CV" className="w-full" /></a>
                     </div>
                 </div>
                 {/* SideNav */}
@@ -109,6 +132,7 @@ export default function MainPage(){
                     </div>
 
                 </div>
+                <SendEmailForm/>
             </div>
         </>
     )
