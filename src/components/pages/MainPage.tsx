@@ -16,6 +16,7 @@ import AboutSection from "@/components/elements/section/AboutSection";
 import SkillsSection from "@/components/elements/section/SkillsSection";
 import ProjectSection from "@/components/elements/section/ProjectSection";
 import ContactSection from "@/components/elements/section/ContactSection";
+import ExperienceSection from "@/components/elements/section/ExperienceSection";
 import SendEmailForm from "@elements/bloks/SendSmsForm"
 import {useSendEmailForm} from "@contexts/SendEmailContext"
 
@@ -129,6 +130,7 @@ export default function MainPage(){
                         {activTab === 'skills' && <SkillsSection />}
                         {activTab === 'projects' && <ProjectSection />}
                         {activTab === 'contact' && <ContactSection/>}
+                        {activTab === 'experience' && <ExperienceSection/>}
                     </div>
 
                 </div>
