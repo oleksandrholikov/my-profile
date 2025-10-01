@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import AnimatedPage from "@components/pages/AnimatedPage"
+
 import IconVScode from '@assets/icons/icon-vscode.png'
 import IconFile from '@assets/icons/icon-files.png'
 import IconCode from '@assets/icons/icon-code.png'
@@ -125,12 +127,36 @@ export default function MainPage(){
                         className="w-full h-[870px] bg-[#242424] bg-cover bg-center"
                         style={{backgroundImage:`url(${BgImage})`}}
                     >
-                        {activTab === 'welcome' && <MainSection btn={setActiveTab}/>}
-                        {activTab === 'about' && <AboutSection />}
-                        {activTab === 'skills' && <SkillsSection />}
-                        {activTab === 'projects' && <ProjectSection />}
-                        {activTab === 'contact' && <ContactSection/>}
-                        {activTab === 'experience' && <ExperienceSection/>}
+                        {activTab === "welcome" && (
+                            <AnimatedPage activTab={activTab}>
+                            <MainSection btn={setActiveTab} />
+                            </AnimatedPage>
+                        )}
+                        {activTab === "about" && (
+                            <AnimatedPage activTab={activTab}>
+                            <AboutSection />
+                            </AnimatedPage>
+                        )}
+                        {activTab === "skills" && (
+                            <AnimatedPage activTab={activTab}>
+                            <SkillsSection />
+                            </AnimatedPage>
+                        )}
+                        {activTab === "projects" && (
+                            <AnimatedPage activTab={activTab}>
+                            <ProjectSection />
+                            </AnimatedPage>
+                        )}
+                        {activTab === "contact" && (
+                            <AnimatedPage activTab={activTab}>
+                            <ContactSection />
+                            </AnimatedPage>
+                        )}
+                        {activTab === "experience" && (
+                            <AnimatedPage activTab={activTab}>
+                            <ExperienceSection />
+                            </AnimatedPage>
+                        )}
                     </div>
 
                 </div>
