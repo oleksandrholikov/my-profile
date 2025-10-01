@@ -16,37 +16,37 @@ export default function AboutSection(){
     const textRef = useRef<HTMLParagraphElement | null>(null);
     const facts: Facts[] = [
         {
-            image:"src/assets/images/hobbies/puzzles.png",
+            image:"/images/hobbies/puzzles.png",
             title:"Puzzles",
             description:"I've assembled over 200 puzzles, ranging from 2,500 to 5,000 pieces; My Top images are the World Map 1864, and Van Gogh's painting Starry Night Over the Rhône ",
             bg:"#40E0D0"
         },
         {
-            image:"src/assets/images/hobbies/cooking.png",
+            image:"/images/hobbies/cooking.png",
             title:"Cooking",
             description:"Master's in Culinary and Restaurant Services",
             bg:"#FFD54F"
         },
         {
-            image:"src/assets/images/hobbies/dancing.png",
+            image:"/images/hobbies/dancing.png",
             title:"Dancing",
             description:"I danced professionally for 13 years and won the European Cup in the 14-16 y.o. category",
             bg:"#FF4081"
         },
         {
-            image:"src/assets/images/hobbies/trevelGuide.png",
+            image:"/images/hobbies/trevelGuide.png",
             title:"Travel Guide",
             description:"I once worked as a tour guide in Turkey, sharing culture and stories with travelers from around the world",
             bg:"#87CEEB"
         },
         {
-            image:"src/assets/images/hobbies/vegan.png",
+            image:"/images/hobbies/vegan.png",
             title:"Vegan",
             description:"I don't eat meat, sugar, or drink alcohol — I believe in conscious and balanced living",
             bg:"#4CAF50"
         },
         {
-            image:"src/assets/images/hobbies/chess.png",
+            image:"/images/hobbies/chess.png",
             title:"Chess",
             description:" I love chess —Played for school and university in city competitions",
             bg:"linear-gradient(135deg,#000000,#FFFFFF)"

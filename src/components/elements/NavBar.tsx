@@ -1,4 +1,3 @@
-import { useState, useRef } from 'react'
 import IconVScode from '@assets/icons/icon-vscode.png'
 import IconHTML from '@assets/icons/icon-html.png'
 import IconScss from '@assets/icons/icon-scss.png'
