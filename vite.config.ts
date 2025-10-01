@@ -22,5 +22,5 @@ export default defineConfig({
      
     },
   },
-  base: 'my-profile',
+  base: '/my-profile/',
 })
