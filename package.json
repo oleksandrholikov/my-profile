@@ -10,11 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
     "@tailwindcss/vite": "^4.1.13",
     "framer-motion": "^12.23.15",
+    "gsap": "^3.13.0",
     "path": "^0.12.7",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-icons": "^5.5.0",
     "react-syntax-highlighter": "^15.6.6",
     "tailwindcss": "^4.1.13"
   },
@@ -23,6 +26,7 @@
     "@types/node": "^24.5.0",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
+    "@types/react-vertical-timeline-component": "^3.3.6",
     "@vitejs/plugin-react": "^5.0.0",
     "eslint": "^9.33.0",
     "eslint-plugin-react-hooks": "^5.2.0",

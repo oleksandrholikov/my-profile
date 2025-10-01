@@ -4,6 +4,7 @@ import IconHTML from '@assets/icons/icon-html.png'
 import IconScss from '@assets/icons/icon-scss.png'
 import IconJson from '@assets/icons/icon-type-json.png'
 import IconPython from '@assets/icons/icon-python.png'
+import IconReact from "@assets/icons/icon-react-ts.png"
 
 type NavbarProps = {
   direction: boolean; 
@@ -34,6 +35,15 @@ export default function Navbar({direction, activTab, setActiveTab }: NavbarProps
       >
         <img src={IconHTML} alt="HTML icon" className="mr-2" />
         about.html
+      </li>
+      <li
+        className={`flex space-x-1 px-2 hover:bg-[#292929] hover:cursor-pointer hover:text-[#fff] active:bg-[#292929] ${
+          activTab === "experience" ? "bg-[#292929] text-white" : ""
+        }`}
+        onClick={() => setActiveTab("experience")}
+      >
+        <img src={IconReact} alt="React icon" className="mr-2" />
+        experience.tsx
       </li>
       <li
         className={`flex space-x-1 px-2 hover:bg-[#292929] hover:cursor-pointer hover:text-[#fff] active:bg-[#292929] ${
