@@ -70,7 +70,7 @@ export default function ContactSection(){
                         <span className="text-blue-400">.cv</span> {"{"}{"\n"}
                         {"    "}file:{" "}
                         <a
-                        href="public/files/CV-HOLIKOV-Oleksandr.pdf"
+                        href="/my-profile/files/CV-HOLIKOV-Oleksandr.pdf"
                         target="_blank"
                         className="text-[#ce9178] hover:underline"
                         >

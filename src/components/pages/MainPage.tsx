@@ -89,7 +89,7 @@ export default function MainPage(){
                             title="Send me a message"
                             ><img src={IconLetter} alt="Icon contact me" className="w-full" /></div>
                         <a className="hover:bg-[#333333] active:bg-[#333333]"
-                            href="public/files/CV-HOLIKOV-Oleksandr.pdf"
+                            href="/my-profile/files/CV-HOLIKOV-Oleksandr.pdf"
                             target="_blank"
                             title="Go to My CV"
                         ><img src={IconProfil} alt="Icon my CV" className="w-full" /></a>
@@ -124,8 +124,11 @@ export default function MainPage(){
                         <NavBar direction={false} activTab={activTab} setActiveTab={setActiveTab} />
                     {/* MainBody */}
                     <div
-                        className="w-full h-[870px] bg-[#242424] bg-cover bg-center"
-                        style={{backgroundImage:`url(${BgImage})`}}
+                        className="w-full h-[870px] bg-[#242424] bg-center"
+                        style={{
+                            backgroundImage: `url(${BgImage})`,
+                            backgroundSize: '100% 100%',
+                        }}
                     >
                         {activTab === "welcome" && (
                             <AnimatedPage activTab={activTab}>

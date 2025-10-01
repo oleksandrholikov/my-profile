@@ -34,7 +34,7 @@ export default HomePage;`;
 
   return (
     <div
-      className="w-full h-full flex items-center justify-between px-6"
+      className="w-full h-full flex items-center justify-around px-6"
     >
     <div className="w-[520px] rounded-lg border border-gray-600/60 shadow-md p-4 font-mono text-sm leading-relaxed text-gray-200 backdrop-blur-sm">
       <SyntaxHighlighter language="tsx" style={vscDarkPlus} showLineNumbers>
