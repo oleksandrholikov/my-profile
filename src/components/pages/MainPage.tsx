@@ -37,11 +37,11 @@ export default function MainPage(){
     return(
         <>
             <div className="flex items-center justify-between w-full">
-                <div className="flex items-center space-x-[10px]">
+                <div className="flex items-center space-x-3">
                     <div>
                         <img src={IconVScode} alt="Icon VS code" />
                     </div>
-                    <ul className="flex items-center justify-between space-x-[30px]">
+                    <ul className="flex items-center justify-between space-x-5">
                         <li className="hover:text-[#979797] cursor-pointer">Home</li>
                         <li className="hover:text-[#979797] cursor-pointer">Edit</li>
                         <li className="hover:text-[#979797] cursor-pointer">View</li>
@@ -53,17 +53,17 @@ export default function MainPage(){
                 <span>
                     Oleksandr Holikov - Visual Studio Code
                 </span>
-                <ul className="flex items-center justify-between space-x-[10px]">
-                    <li className="w-[20px] aspect-square bg-[#00A80B] rounded-full hover:scale-105 hover:cursor-pointer"></li>
-                    <li className="w-[20px] aspect-square bg-[#FFF600] rounded-full hover:scale-105 hover:cursor-pointer"></li>
-                    <li className="w-[20px] aspect-square bg-[#FF0000] rounded-full hover:scale-105 hover:cursor-pointer"></li>
+                <ul className="flex items-center justify-between space-x-3">
+                    <li className="size-5 bg-[#00A80B] rounded-full hover:scale-105 hover:cursor-pointer"></li>
+                    <li className="size-5 bg-[#FFF600] rounded-full hover:scale-105 hover:cursor-pointer"></li>
+                    <li className="size-5 bg-[#FF0000] rounded-full hover:scale-105 hover:cursor-pointer"></li>
                 </ul>
             </div>
             <div className="flex w-full h-full"
             >
                 {/* SideBar */}
-                <div  className="flex flex-col w-[70px] justify-between items-center bg-[#252526]">
-                    <div className="flex flex-col w-[70px]">
+                <div  className="flex flex-col w-20 justify-between items-center bg-[#252526]">
+                    <div className="flex flex-col w-full">
                         <div className="hover:bg-[#333333] active:bg-[#333333] hover:cursor-pointer"
                             title="Go to My Projects"
                             onClick={() => setActiveTab('projects')}
@@ -73,7 +73,7 @@ export default function MainPage(){
                             onClick={() => setActiveTab('skills')}
                         ><img src={IconCode} alt="Icon Code" className="w-full" /></div>
                     </div>
-                    <div className="flex flex-col w-[70px]">
+                    <div className="flex flex-col w-full">
                         <a className="hover:bg-[#333333] active:bg-[#333333]"
                             href="https://github.com/oleksandrholikov"
                             target="_blank"
@@ -96,11 +96,11 @@ export default function MainPage(){
                     </div>
                 </div>
                 {/* SideNav */}
-                <div className="flex flex-col w-[300px] justify-start items-start p-[10px] text-[#D4D4D4]">
-                    <span className="font-bold text-[25px]">EXPLORER</span>
-                    <span className="flex items-center text-[25px] hover:cursor-pointer hover:text-[#fff]"
+                <div className="flex flex-col w-2xs justify-start items-start p-2 text-[#D4D4D4]">
+                    <span className="font-bold text-2xl">EXPLORER</span>
+                    <span className="flex items-center text-2xl hover:cursor-pointer hover:text-[#fff]"
                         onClick={() => setDropDown(!dropDown)}
-                    ><img src={IconArrowDown} alt="Icon Arrow Down" className ={`w-[35px] h-[17px] ${dropDown ? 'rotate-180' : ''} duration-200`}/>Portfolio</span>
+                    ><img src={IconArrowDown} alt="Icon Arrow Down" className ={`w-9 ${dropDown ? 'rotate-180' : ''} duration-200`}/>Portfolio</span>
                     <AnimatePresence>
                         {dropDown && (
                         <motion.div
@@ -124,7 +124,7 @@ export default function MainPage(){
                         <NavBar direction={false} activTab={activTab} setActiveTab={setActiveTab} />
                     {/* MainBody */}
                     <div
-                        className="w-full h-[870px] bg-[#242424] bg-center"
+                        className="w-full h-[93vh] bg-[#242424] bg-center"
                         style={{
                             backgroundImage: `url(${BgImage})`,
                             backgroundSize: '100% 100%',

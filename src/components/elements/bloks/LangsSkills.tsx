@@ -56,7 +56,7 @@ export default function LangsSkills({parentRef} : Props){
     }, [])
 
     return(
-        <div  ref={containerRef}className="relative w-[453px] h-[330px] mx-5">
+        <div  ref={containerRef}className="relative w-113 h-82 mx-5">
             <div className="absolute top-0 left-0 hover:scale-105 hover:cursor-pointer"><img src={PHP} alt="PHP piece"/></div>
             <div className="absolute top-[12px] left-[144px] hover:scale-105 hover:cursor-pointer"><img src={JS} alt="JS piece" /></div>
             <div className="absolute top-[21px] right-0 hover:scale-105 hover:cursor-pointer"><img src={CSS} alt="CSS piece" /></div>

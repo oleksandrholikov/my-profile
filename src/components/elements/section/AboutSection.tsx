@@ -75,13 +75,13 @@ export default function AboutSection(){
                     I find inspiration in walks through the forest and a good cup of coffee. Yoga and puzzles help me stay balanced and focused.
                 </p>
             </div>
-            <div className='flex flex-wrap w-[780px] gap-3'>
+            <div className='flex flex-wrap w-290 gap-3'>
                 {facts.map((item)=>{
                    return(
                    <div 
                     key={item.title} 
                     style={{ background: item.bg }}
-                    className="w-[250px] h-[250px] group relative overflow-hidden hover:rounded-xl " 
+                    className="size-75 group relative overflow-hidden hover:rounded-xl " 
                     >                   
                     <img 
                         src={item.image} 
