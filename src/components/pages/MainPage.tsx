@@ -59,16 +59,16 @@ export default function MainPage(){
                     <li className="w-[20px] aspect-square bg-[#FF0000] rounded-full hover:scale-105 hover:cursor-pointer"></li>
                 </ul>
             </div>
-            <div className="flex w-full h-[990px]"
+            <div className="flex w-full h-full"
             >
                 {/* SideBar */}
                 <div  className="flex flex-col w-[70px] justify-between items-center bg-[#252526]">
                     <div className="flex flex-col w-[70px]">
-                        <div className="hover:bg-[#333333] active:bg-[#333333]"
+                        <div className="hover:bg-[#333333] active:bg-[#333333] hover:cursor-pointer"
                             title="Go to My Projects"
                             onClick={() => setActiveTab('projects')}
                         ><img src={IconFile} alt="Icon File" className="w-full" /></div>
-                        <div className="hover:bg-[#333333] active:bg-[#333333]"
+                        <div className="hover:bg-[#333333] active:bg-[#333333] hover:cursor-pointer"
                             title="Go to my Skills"
                             onClick={() => setActiveTab('skills')}
                         ><img src={IconCode} alt="Icon Code" className="w-full" /></div>
@@ -84,7 +84,7 @@ export default function MainPage(){
                             target="_blank"
                             title="Go to My LinkEdin"
                         ><img src={IconLinkEdin} alt="Icon LinkEdin" className="w-full" /></a>
-                        <div className="hover:bg-[#333333] active:bg-[#333333]"
+                        <div className="hover:bg-[#333333] active:bg-[#333333] hover:cursor-pointer"
                             onClick={()=>setIsOpen(true)}                       
                             title="Send me a message"
                             ><img src={IconLetter} alt="Icon contact me" className="w-full" /></div>

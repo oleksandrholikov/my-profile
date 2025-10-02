@@ -32,7 +32,7 @@ export default function ProjectSection(){
       title: "E-commerce KANOV",
       description: "A professional e-commerce platform for selling literature and reading goods with focus on usability and performance.",
       image: "/my-profile/images/projects/kanov.png",
-      link: "#",
+      link: "https://github.com/oleksandrholikov/e-commerce",
       techs: ["Symfony", "API Platform", "React", "SQL"],
     },
     {
