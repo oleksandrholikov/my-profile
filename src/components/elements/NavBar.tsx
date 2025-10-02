@@ -1,4 +1,3 @@
-import { useState, useRef } from 'react'
 import IconVScode from '@assets/icons/icon-vscode.png'
 import IconHTML from '@assets/icons/icon-html.png'
 import IconScss from '@assets/icons/icon-scss.png'
@@ -16,7 +15,7 @@ type NavbarProps = {
 export default function Navbar({direction, activTab, setActiveTab }: NavbarProps){
 
     return(
-        <ul className={`flex ${direction ? "flex-col w-full space-y-2" : "flex-row justify-start"}   text-[20px]`}
+        <ul className={`flex ${direction ? "flex-col w-full space-y-2" : "flex-row justify-start"}   text-xl`}
         >
          <li
         className={`flex space-x-1 px-2 hover:bg-[#292929] hover:cursor-pointer hover:text-[#fff] active:bg-[#292929] ${

@@ -66,7 +66,7 @@ export default function SendSmsForm(){
       <div className="fixed inset-0 bg-[#0000003b] z-10 flex items-center justify-center"
       onClick={() => setIsOpen(false)}
       >
-       <div className=' w-[450px] flex flex-col gap-4 items-center justify-start'
+       <div className=' w-sm flex flex-col gap-4 items-center justify-start'
        onClick={(e) => e.stopPropagation()}
        > 
             
@@ -75,7 +75,7 @@ export default function SendSmsForm(){
               className="relative w-full max-w-lg mx-auto flex flex-col gap-4 bg-[#1e1e1e] p-6 rounded-2xl border border-[#3c3c3c] shadow-lg"
             >
               <h2 className="text-xl font-semibold text-[#d4d4d4]">Send me a message</h2>
-              <div className='absolute top-3 right-3 hover:cursor-pointer hover:scale-110 max-w-[25px]'>
+              <div className='absolute top-3 right-3 hover:cursor-pointer hover:scale-110 max-w-8'>
                         <img src={IconCross} onClick={() => setIsOpen(false)} alt="Icon Cross" />
               </div>
               {/* Name */}
