@@ -8,7 +8,7 @@ type Project = {
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="flex flex-col items-start justify-start group p-6 w-[500px] h-[300px] border-[3px] border-[#ED816C] rounded-2xl overflow-hidden relative">
+    <div className="flex flex-col items-start justify-start group p-6 max-w-lg h-auto border-4 border-[#ED816C] rounded-2xl overflow-hidden relative">
       <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
 
       <div className="absolute inset-0">

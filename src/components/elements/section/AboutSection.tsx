@@ -66,22 +66,22 @@ export default function AboutSection(){
 
     }, [])
     return(
-        <div className="flex flex-col w-full h-full items-center justify-start p-6 space-y-2 overflow-y-auto">
-            <div className="flex flex-col items-start space-y-3 w-full">
-                <h1 className="text-5xl font-bold text-white">Oleksandr Holikov</h1>
-                <p className="text-3xl font-semibold text-[#CE9178]">Full Stack Web Developer</p>
+        <div className="flex flex-col w-full h-full items-center justify-start p-6 overflow-y-auto">
+            <div className="flex flex-col items-start space-y-2 w-full">
+                <h1 className="text-4xl font-bold text-white">Oleksandr Holikov</h1>
+                <p className="text-2xl font-semibold text-[#CE9178]">Full Stack Web Developer</p>
                 <p ref={textRef} className="text-xl text-white">
                     To me, programming is like solving a complex puzzle: at first, it may look chaotic, but with patience and attention to detail, each piece clicks into place. It’s a creative process rooted in logic — where you build something meaningful from nothing.
                     I find inspiration in walks through the forest and a good cup of coffee. Yoga and puzzles help me stay balanced and focused.
                 </p>
             </div>
-            <div className='flex flex-wrap w-[780px] gap-3'>
+            <div className='flex flex-wrap justify-center w-full gap-3'>
                 {facts.map((item)=>{
                    return(
                    <div 
                     key={item.title} 
                     style={{ background: item.bg }}
-                    className="w-[250px] h-[250px] group relative overflow-hidden hover:rounded-xl " 
+                    className="size-60 group relative overflow-hidden hover:rounded-xl " 
                     >                   
                     <img 
                         src={item.image} 

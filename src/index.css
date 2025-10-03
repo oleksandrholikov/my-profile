@@ -5,14 +5,15 @@ body {
   background-color: #1E1E1E;
 }
 #root{
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: start;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
   margin: auto;
-  max-width: 100vw;
+  min-width: 100vw;
   max-height: 100vh;
   /* max-height: 900px; */
   color: #D4D4D4;  
+  padding: 0.3rem 0.5rem;
+  /* box-sizing: border-box; */
 }
 

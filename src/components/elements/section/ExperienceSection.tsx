@@ -83,7 +83,7 @@ export default function ExperienceSection() {
                 ...vscDarkPlus['pre[class*="language-"]'],
                 background: "transparent", 
                 fontSize: "20px", 
-                lineHeight: "1.6",
+                lineHeight: "1.2",
                 padding: "0"
             }
             }}>
@@ -99,7 +99,7 @@ export default function ExperienceSection() {
                 ...vscDarkPlus['pre[class*="language-"]'],
                 background: "transparent", 
                 fontSize: "20px", 
-                lineHeight: "1.6",
+                lineHeight: "1.2",
                 padding: "0"
             }
             }}

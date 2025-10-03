@@ -57,7 +57,7 @@ export default function SoftSkills({parentRef} : Props){
         }, 500); 
     },[])
     return(
-        <div ref={containerRef}className="relative w-[305px] h-[450px] mx-5">
+        <div ref={containerRef}className="relative w-76 h-112 mx-5">
             <div className="absolute top-0 left-0 hover:scale-105 hover:cursor-pointer"><img src={Mskils} alt="Mskils piece"/></div>
             <div className="absolute top-[35px] right-[-19px] hover:scale-105 hover:cursor-pointer"><img src={Creativity} alt="Creativity piece" /></div>
             <div className="absolute top-[89px] left-[-48px] hover:scale-105 hover:cursor-pointer"><img src={Teamwork} alt="Teamwork piece" /></div>

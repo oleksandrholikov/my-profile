@@ -32,7 +32,7 @@ export default function ProjectSection(){
       title: "E-commerce KANOV",
       description: "A professional e-commerce platform for selling literature and reading goods with focus on usability and performance.",
       image: "/my-profile/images/projects/kanov.png",
-      link: "#",
+      link: "https://github.com/oleksandrholikov/e-commerce",
       techs: ["Symfony", "API Platform", "React", "SQL"],
     },
     {
@@ -59,8 +59,8 @@ export default function ProjectSection(){
   }, [])
 
     return(
-        <div className=" flex  flex-col  justify-start gap-8 p-6 h-full w-full overflow-y-auto ">
-            <h2 className="text-5xl self-start font-bold text-[#ED816C]">My projects</h2>
+        <div className=" flex  flex-col  justify-start gap-6 p-2 h-full w-full overflow-y-auto ">
+            <h2 className="text-4xl self-start font-bold text-[#ED816C]">My projects</h2>
             <p ref={textRef} className="text-2xl max-w-xl self-start text-white" id="text">
                 Below are some of my latest projects. More projects are available on my  
                  <a
@@ -70,7 +70,7 @@ export default function ProjectSection(){
                     className="hover:text-[#ED816C] hover:font-semibold hover:cursor-pointer"
                     >&nbsp;GitHub</a>
             </p>
-            <div className="flex justify-center w-full flex-wrap gap-8">
+            <div className="flex justify-center w-full flex-wrap gap-6">
                 {projects.map((project, index) => (
                     <ProjectCard key={index} project={project} />
                 ))}
