@@ -34,9 +34,9 @@ export default HomePage;`;
 
   return (
     <div
-      className="w-full h-full flex items-center justify-around px-6"
+      className="w-full h-full flex items-center justify-between px-12 gap-8"
     >
-    <div className="w-lg rounded-lg border border-gray-600/60 shadow-md p-4 font-mono text-sm leading-relaxed text-gray-200 backdrop-blur-sm">
+    <div className="max-w-2xl w-full rounded-lg border border-gray-600/60 shadow-md p-4 font-mono text-sm leading-relaxed text-gray-200 backdrop-blur-sm">
       <SyntaxHighlighter language="tsx" style={vscDarkPlus} showLineNumbers>
         {codeString}
       </SyntaxHighlighter>
@@ -46,7 +46,7 @@ export default HomePage;`;
           <p className="text-5xl font-semibold text-[#CE9178]">Full Stack Web Developer</p>
           <p className="text-xl text-white italic">Every line of code is a puzzle piece. Let's assemble your perfect puzzle: fast, high-quality, and with minimal resource usage.</p>
           <button
-            className="flex items-center justify-evenly text-2xl font-semibold text-white w-3xs p-3 rounded-4xl bg-[#6A9955] hover:cursor-pointer hover:bg-[#517c3e]"
+            className="flex items-center justify-evenly text-2xl font-semibold text-white px-6 py-3 rounded-4xl bg-[#6A9955] hover:cursor-pointer hover:bg-[#517c3e]"
             onClick={() => btn('projects')}
           ><span>View Projects</span><img src={IconArrowLeft} alt="Icon arrow left" /></button>
         

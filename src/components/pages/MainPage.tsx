@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedPage from "@components/pages/AnimatedPage"
 
@@ -32,10 +32,8 @@ export default function MainPage(){
     const [dropDown, setDropDown] =useState<Boolean>(true)
     const {setIsOpen} = useSendEmailForm()
 
-
-
     return(
-        <>
+        <div className="h-[95vh]">
             <div className="flex items-center justify-between w-full">
                 <div className="flex items-center space-x-3">
                     <div>
@@ -124,7 +122,7 @@ export default function MainPage(){
                         <NavBar direction={false} activTab={activTab} setActiveTab={setActiveTab} />
                     {/* MainBody */}
                     <div
-                        className="w-full h-[93vh] bg-[#242424] bg-center"
+                        className="w-full min-w-6xl h-[93vh] bg-[#242424] bg-center"
                         style={{
                             backgroundImage: `url(${BgImage})`,
                             backgroundSize: '100% 100%',
@@ -165,6 +163,6 @@ export default function MainPage(){
                 </div>
                 <SendEmailForm/>
             </div>
-        </>
+        </div>
     )
 }

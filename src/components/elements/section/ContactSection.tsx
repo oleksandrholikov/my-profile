@@ -24,7 +24,7 @@ export default function ContactSection(){
     }, [])
 
     return(
-        <div className="w-full h-full flex flex-col items-center justify-start p-6 gap-4">
+        <div className="w-full  h-full flex flex-col items-center justify-start p-4 gap-4">
             <h2 className="text-5xl font-bold text-[#ED816C]">Contact me</h2>
             <p ref={textRef}  className="text-xl text-white max-w-md" >Building a quality product is always a result of collaboration. If you're looking for a web developer who is detail-oriented and ready to work together to achieve your goals, let's connect.</p>
             <div className="border border-t-4 border-[#ED816C] w-xl font-mono text-base leading-relaxed text-gray-200 backdrop-blur-sm shadow-xl">
