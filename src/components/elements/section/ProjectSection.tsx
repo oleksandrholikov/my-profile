@@ -61,7 +61,7 @@ export default function ProjectSection(){
     return(
         <div className=" flex  flex-col  justify-start gap-2 p-2 h-full w-full overflow-y-auto ">
             <h2 className="text-4xl self-start font-bold text-[#ED816C]">My projects</h2>
-            <p ref={textRef} className="text-2xl max-w-xl self-start text-white" id="text">
+            <p ref={textRef} className="text-2xl max-w-2xl self-start text-white" id="text">
                 Below are some of my latest projects. More projects are available on my  
                  <a
                     href="https://github.com/oleksandrholikov"
