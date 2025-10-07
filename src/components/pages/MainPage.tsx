@@ -19,13 +19,9 @@ import SkillsSection from "@/components/elements/section/SkillsSection";
 import ProjectSection from "@/components/elements/section/ProjectSection";
 import ContactSection from "@/components/elements/section/ContactSection";
 import ExperienceSection from "@/components/elements/section/ExperienceSection";
+import MobileMenu from "@elements/bloks/MobileMenu"
 import SendEmailForm from "@elements/bloks/SendSmsForm"
 import {useSendEmailForm} from "@contexts/SendEmailContext"
-
-
-
-
-
 
 export default function MainPage(){
     const [activTab, setActiveTab] = useState<string>('welcome');
@@ -35,11 +31,11 @@ export default function MainPage(){
     return(
         <div className="h-[95vh]">
             <div className="flex items-center justify-between w-full">
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center space-x-3 max-sm:hidden">
                     <div>
                         <img src={IconVScode} alt="Icon VS code" />
                     </div>
-                    <ul className="flex items-center justify-between space-x-5">
+                    <ul className="flex items-center justify-between space-x-5 ">
                         <li className="hover:text-[#979797] cursor-pointer">Home</li>
                         <li className="hover:text-[#979797] cursor-pointer">Edit</li>
                         <li className="hover:text-[#979797] cursor-pointer">View</li>
@@ -60,7 +56,7 @@ export default function MainPage(){
             <div className="flex w-full h-full"
             >
                 {/* SideBar */}
-                <div  className="flex flex-col w-20 justify-between items-center bg-[#252526]">
+                <div  className="flex flex-col w-20 justify-between items-center bg-[#252526] max-sm:hidden">
                     <div className="flex flex-col w-full">
                         <div className="hover:bg-[#333333] active:bg-[#333333] hover:cursor-pointer"
                             title="Go to My Projects"
@@ -94,7 +90,7 @@ export default function MainPage(){
                     </div>
                 </div>
                 {/* SideNav */}
-                <div className="flex flex-col w-2xs justify-start items-start p-2 text-[#D4D4D4]">
+                <div className="flex flex-col w-2xs justify-start items-start p-2 text-[#D4D4D4] max-sm:hidden">
                     <span className="font-bold text-2xl">EXPLORER</span>
                     <span className="flex items-center text-2xl hover:cursor-pointer hover:text-[#fff]"
                         onClick={() => setDropDown(!dropDown)}
@@ -119,10 +115,16 @@ export default function MainPage(){
                 </div>
                 <div className="flex flex-col w-full">
                     {/* NavHeader */}
+                    <div className="max-sm:hidden">
                         <NavBar direction={false} activTab={activTab} setActiveTab={setActiveTab} />
+                    </div>
+                    {/* MobileMenu */}
+                    <div className="w-20 max-h-[800px] h-full sm:hidden ">
+                        <MobileMenu/>
+                    </div>
                     {/* MainBody */}
                     <div
-                        className="w-full min-w-6xl h-[93vh] bg-[#242424] bg-center"
+                        className="w-full min-w-6xl h-[93vh] bg-[#242424] bg-center max-sm:hidden"
                         style={{
                             backgroundImage: `url(${BgImage})`,
                             backgroundSize: '100% 100%',
