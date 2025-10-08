@@ -89,7 +89,7 @@ export default function BurgerMenu({activTab, setActiveTab }: NavbarProps) {
         className="w-18 cursor-pointer ml-3"        
       />
       <div ref={menuRef} 
-        className="fixed top-20 left-0 h-full  bg-[#1a1a1a1d] z-50 flex flex-col items-center p-6 shadow-lg"
+        className="fixed top-20 left-0 h-full  bg-[#1a1a1a82] z-50 flex flex-col items-center p-6 shadow-lg"
         style={{ transform: "translateX(-100%)" }}      
       >
         <Navbar direction={true} activTab={activTab} setActiveTab={(tab) => {

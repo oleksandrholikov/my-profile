@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedPage from "@components/pages/AnimatedPage"
 
@@ -119,7 +119,7 @@ export default function MainPage(){
                         <NavBar direction={false} activTab={activTab} setActiveTab={setActiveTab} />
                     </div>
                     {/* MobileMenu */}
-                    <div className="w-20 max-h-[800px] h-full sm:hidden ">
+                    <div className="w-20 max-h-[800px] h-full fixed top-10 z-50 sm:hidden ">
                         <MobileMenu activTab={activTab} setActiveTab={setActiveTab}/>
                     </div>
                     {/* MainBody */}
@@ -160,6 +160,15 @@ export default function MainPage(){
                             <ExperienceSection />
                             </AnimatedPage>
                         )}
+                    </div>
+                    <div className="flex-col max-sm:flex sm:hidden h-full overflow-y-auto">                        
+                        <MainSection btn={setActiveTab}/>                        
+                        <AboutSection />
+                        {/* <SkillsSection />
+                        <ProjectSection />
+                        <ContactSection />
+                        <ExperienceSection /> */}
+
                     </div>
 
                 </div>
