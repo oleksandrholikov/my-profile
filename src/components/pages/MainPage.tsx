@@ -161,11 +161,11 @@ export default function MainPage(){
                             </AnimatedPage>
                         )}
                     </div>
-                    <div className="flex-col max-sm:flex sm:hidden h-full overflow-y-auto">                        
+                    <div className="flex-col flex space-y-10 sm:hidden  overflow-y-auto">                        
                         <MainSection btn={setActiveTab}/>                        
                         <AboutSection />
-                        {/* <SkillsSection />
-                        <ProjectSection />
+                        <SkillsSection />
+                        {/* <ProjectSection />
                         <ContactSection />
                         <ExperienceSection /> */}
 
