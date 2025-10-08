@@ -17,6 +17,9 @@ export default function LangsSkills({parentRef} : Props){
     const containerRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
+        const isMobile = window.matchMedia("(max-width: 640px)").matches; // sm breakpoint
+        if (isMobile) return; 
+
         const pieces = containerRef.current?.querySelectorAll("img")
         const container = parentRef.current
         if (!pieces || !container) return
@@ -56,7 +59,7 @@ export default function LangsSkills({parentRef} : Props){
     }, [])
 
     return(
-        <div  ref={containerRef}className="relative w-113 h-82 mx-5">
+        <div  ref={containerRef} className="relative w-113 h-82 mx-5 max-sm:scale-60 max-sm:mx-0">
             <div className="absolute top-0 left-0 hover:scale-105 hover:cursor-pointer"><img src={PHP} alt="PHP piece"/></div>
             <div className="absolute top-[12px] left-[144px] hover:scale-105 hover:cursor-pointer"><img src={JS} alt="JS piece" /></div>
             <div className="absolute top-[21px] right-0 hover:scale-105 hover:cursor-pointer"><img src={CSS} alt="CSS piece" /></div>

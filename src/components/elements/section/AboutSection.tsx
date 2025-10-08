@@ -1,4 +1,4 @@
-import { useEffect, useRef }  from "react"
+import { useEffect, useRef, useState}  from "react"
 import { gsap} from "gsap"
 import { SplitText } from "gsap/SplitText";
 
@@ -52,6 +52,15 @@ export default function AboutSection(){
             bg:"linear-gradient(135deg,#000000,#FFFFFF)"
         }
     ]
+
+    const [zoom, setZoom] = useState<boolean>(false)
+    
+            useEffect(()=>{         
+             console.log("zoom",window.devicePixelRatio )   
+            if (window.devicePixelRatio > 1) {
+                setZoom(true)
+            }
+        }, [])
     
     useEffect(()=>{
         const text = textRef.current
@@ -66,22 +75,23 @@ export default function AboutSection(){
 
     }, [])
     return(
-        <div className="flex flex-col w-full h-full items-center justify-start p-6 overflow-y-auto">
+        <div className="flex flex-col w-full h-full items-center justify-start p-2 sm:overflow-y-auto max-sm:space-y-3 max-sm:min-h-dvh">
             <div className="flex flex-col items-start space-y-2 w-full">
-                <h1 className="text-4xl font-bold text-white">Oleksandr Holikov</h1>
-                <p className="text-2xl font-semibold text-[#CE9178]">Full Stack Web Developer</p>
-                <p ref={textRef} className="text-xl text-white">
+                <h1 className="text-4xl font-bold text-white max-sm:hidden">Oleksandr Holikov</h1>
+                <h1 className='text-2xl font-bold text-[#ED816C] self-end sm:hidden'>About Me</h1>
+                <p className="text-2xl font-semibold text-[#CE9178] max-sm:hidden ">Full Stack Web Developer</p>
+                <p ref={textRef} className="text-xl text-white max-sm:text-center">
                     To me, programming is like solving a complex puzzle: at first, it may look chaotic, but with patience and attention to detail, each piece clicks into place. It’s a creative process rooted in logic — where you build something meaningful from nothing.
                     I find inspiration in walks through the forest and a good cup of coffee. Yoga and puzzles help me stay balanced and focused.
                 </p>
             </div>
-            <div className='flex flex-wrap justify-center w-full gap-3'>
+            <div className={`${zoom ? 'flex flex-wrap justify-center max-w-190 gap-3' : 'flex flex-wrap justify-center max-w-235 gap-3'}`}>
                 {facts.map((item)=>{
                    return(
                    <div 
                     key={item.title} 
                     style={{ background: item.bg }}
-                    className="size-60 group relative overflow-hidden hover:rounded-xl " 
+                    className={ `group relative overflow-hidden hover:rounded-xl ${zoom ? 'size-60' : "size-75"} max-sm:size-35`} 
                     >                   
                     <img 
                         src={item.image} 
@@ -90,8 +100,8 @@ export default function AboutSection(){
                     />
                     <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-40 transition-opacity duration-300"></div>                    
                     <div className="absolute inset-0 flex items-center justify-center px-3 text-center text-white z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <p className="text-xl font-semibold">{item.description}</p>
-                    </div>
+                        <p className="text-base font-semibold">{item.description}</p>
+                    </div>                    
                     </div>
                    ) 
                 })}
@@ -100,3 +110,4 @@ export default function AboutSection(){
         </div>
     )
 }
+// flex flex-wrap justify-center w-full gap-3

@@ -34,17 +34,17 @@ export default HomePage;`;
 
   return (
     <div
-      className="w-full h-full flex items-center justify-between px-12 gap-8"
+      className="w-full h-full flex items-center justify-between px-12 gap-8 max-sm:flex-col max-sm:py-3.5 max-sm:min-h-dvh max-sm:justify-center"
     >
-    <div className="max-w-2xl w-full rounded-lg border border-gray-600/60 shadow-md p-4 font-mono text-sm leading-relaxed text-gray-200 backdrop-blur-sm">
+    <div className="max-w-2xl w-full rounded-lg border border-gray-600/60 shadow-md p-4 font-mono text-sm leading-relaxed text-gray-200 backdrop-blur-sm max-sm:hidden ">
       <SyntaxHighlighter language="tsx" style={vscDarkPlus} showLineNumbers>
         {codeString}
       </SyntaxHighlighter>
     </div>
-    <div className="max-w-md flex flex-col justify-between items-start space-y-6">        
-          <h1 className="text-7xl font-bold text-white">Oleksandr Holikov</h1>
-          <p className="text-5xl font-semibold text-[#CE9178]">Full Stack Web Developer</p>
-          <p className="text-xl text-white italic">Every line of code is a puzzle piece. Let's assemble your perfect puzzle: fast, high-quality, and with minimal resource usage.</p>
+    <div className="max-w-md flex flex-col justify-between items-end space-y-6 ">        
+          <h1 className="text-7xl font-bold text-white max-sm:text-4xl max-sm:text-right">Oleksandr Holikov</h1>
+          <p className="text-5xl font-semibold text-[#CE9178] max-sm:text-right">Full Stack Web Developer</p>
+          <p className="text-xl text-white italic max-sm:text-center">Every line of code is a puzzle piece. Let's assemble your perfect puzzle: fast, high-quality, and with minimal resource usage.</p>
           <button
             className="flex items-center justify-evenly text-2xl font-semibold text-white px-6 py-3 rounded-4xl bg-[#6A9955] hover:cursor-pointer hover:bg-[#517c3e]"
             onClick={() => btn('projects')}

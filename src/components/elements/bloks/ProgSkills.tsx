@@ -14,6 +14,8 @@ export default function ProgsSkills({parentRef} : Props){
     const containerRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
+        const isMobile = window.matchMedia("(max-width: 640px)").matches; // sm breakpoint
+        if (isMobile) return;
         const pieces = containerRef.current?.querySelectorAll("img")
         const container = parentRef.current
         if (!pieces || !container) return
@@ -52,7 +54,7 @@ export default function ProgsSkills({parentRef} : Props){
     },[])
 
     return(
-        <div ref={containerRef}className="relative size-74 mx-5">
+        <div ref={containerRef}className="relative size-74 mx-5 max-sm:scale-80 max-sm:rotate-5">
             <div className="absolute top-0 left-0 hover:scale-105 hover:cursor-pointer"><img src={Docker} alt="Docker piece"/></div>
             <div className="absolute top-[-16px] right-[-15px] hover:scale-105 hover:cursor-pointer"><img src={VSCode} alt="VSCode piece" /></div>
             <div className="absolute bottom-[-9px] left-[17px] hover:scale-105 hover:cursor-pointer"><img src={Figma} alt="Figma piece" /></div>

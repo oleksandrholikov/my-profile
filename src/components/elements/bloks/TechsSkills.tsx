@@ -21,9 +21,12 @@ export default function TechsSkills({parentRef} : Props){
     const containerRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
-    const pieces = containerRef.current?.querySelectorAll("img");
-    const container = parentRef.current
-        if (!pieces || !container) return
+        const isMobile = window.matchMedia("(max-width: 640px)").matches; // sm breakpoint
+        if (isMobile) return;
+
+        const pieces = containerRef.current?.querySelectorAll("img");
+        const container = parentRef.current
+            if (!pieces || !container) return
         
        pieces.forEach(piece => {
         const pieceW = (piece as HTMLElement).offsetWidth
@@ -59,7 +62,7 @@ export default function TechsSkills({parentRef} : Props){
 
 
     return(
-        <div  ref={containerRef}className="relative w-[465px] flex flex-wrap aspect-square mx-5">
+        <div  ref={containerRef}className="relative w-[465px] flex flex-wrap aspect-square mx-5 max-sm:scale-70 max-sm:-rotate-5">
             <div className="absolute top-0.5 left-0 hover:scale-105 hover:cursor-pointer"><img src={MERN} alt="MERN icon" /></div>
             <div className="absolute top-1.5 left-[144px] hover:scale-105 hover:cursor-pointer"><img src={REACT} alt="REACT icon" /></div>
             <div className="absolute top-[30px] right-0 hover:scale-105 hover:cursor-pointer"><img src={Symfony} alt="Symfony icon" /></div>
