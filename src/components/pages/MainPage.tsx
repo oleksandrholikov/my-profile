@@ -120,7 +120,7 @@ export default function MainPage(){
                     </div>
                     {/* MobileMenu */}
                     <div className="w-20 max-h-[800px] h-full sm:hidden ">
-                        <MobileMenu/>
+                        <MobileMenu activTab={activTab} setActiveTab={setActiveTab}/>
                     </div>
                     {/* MainBody */}
                     <div
