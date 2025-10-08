@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {  useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedPage from "@components/pages/AnimatedPage"
 
@@ -19,27 +19,77 @@ import SkillsSection from "@/components/elements/section/SkillsSection";
 import ProjectSection from "@/components/elements/section/ProjectSection";
 import ContactSection from "@/components/elements/section/ContactSection";
 import ExperienceSection from "@/components/elements/section/ExperienceSection";
+import MobileMenu from "@elements/bloks/MobileMenu"
 import SendEmailForm from "@elements/bloks/SendSmsForm"
 import {useSendEmailForm} from "@contexts/SendEmailContext"
 
-
-
-
-
-
 export default function MainPage(){
     const [activTab, setActiveTab] = useState<string>('welcome');
-    const [dropDown, setDropDown] =useState<Boolean>(true)
-    const {setIsOpen} = useSendEmailForm()
+    const [dropDown, setDropDown] =useState<Boolean>(true);
+    const {setIsOpen} = useSendEmailForm();
+    const mainRef = useRef<HTMLDivElement | null>(null);
+    const aboutRef = useRef<HTMLDivElement | null>(null);
+    const skillsRef = useRef<HTMLDivElement | null>(null);
+    const experienceRef = useRef<HTMLDivElement | null>(null);
+    const projectsRef = useRef<HTMLDivElement | null>(null);
+    const contactRef = useRef<HTMLDivElement | null>(null);
+
+
+    useEffect(() => {
+  const sections = [
+    { id: "welcome", ref: mainRef },
+    { id: "about", ref: aboutRef },
+    { id: "skills", ref: skillsRef },
+    { id: "experience", ref: experienceRef },
+    { id: "projects", ref: projectsRef },
+    { id: "contact", ref: contactRef },
+  ];
+
+  const handleScroll = () => {
+    if (window.innerWidth >= 640) return;
+        for (let section of sections) {
+        const el = section.ref.current;
+        if (!el) continue;
+
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+            setActiveTab(section.id);
+            break;
+        }
+        }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    const scrollToSection = (section: string) => {
+    const refs: Record<string, React.RefObject<HTMLDivElement | null>> = {
+        welcome: mainRef,
+        about: aboutRef,
+        skills: skillsRef,
+        experience: experienceRef,
+        projects: projectsRef,
+        contact: contactRef,
+    };
+
+    const element = refs[section]?.current;
+    if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+    }
+
+    setActiveTab(section);
+    };
+
 
     return(
-        <div className="h-[95vh]">
+        <div className="h-[95vh] w-full">
             <div className="flex items-center justify-between w-full">
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center space-x-3 max-sm:hidden">
                     <div>
                         <img src={IconVScode} alt="Icon VS code" />
                     </div>
-                    <ul className="flex items-center justify-between space-x-5">
+                    <ul className="flex items-center justify-between space-x-5 ">
                         <li className="hover:text-[#979797] cursor-pointer">Home</li>
                         <li className="hover:text-[#979797] cursor-pointer">Edit</li>
                         <li className="hover:text-[#979797] cursor-pointer">View</li>
@@ -60,7 +110,7 @@ export default function MainPage(){
             <div className="flex w-full h-full"
             >
                 {/* SideBar */}
-                <div  className="flex flex-col w-20 justify-between items-center bg-[#252526]">
+                <div  className="flex flex-col w-20 justify-between items-center bg-[#252526] max-sm:hidden">
                     <div className="flex flex-col w-full">
                         <div className="hover:bg-[#333333] active:bg-[#333333] hover:cursor-pointer"
                             title="Go to My Projects"
@@ -94,7 +144,7 @@ export default function MainPage(){
                     </div>
                 </div>
                 {/* SideNav */}
-                <div className="flex flex-col w-2xs justify-start items-start p-2 text-[#D4D4D4]">
+                <div className="flex flex-col w-2xs justify-start items-start p-2 text-[#D4D4D4] max-sm:hidden">
                     <span className="font-bold text-2xl">EXPLORER</span>
                     <span className="flex items-center text-2xl hover:cursor-pointer hover:text-[#fff]"
                         onClick={() => setDropDown(!dropDown)}
@@ -119,10 +169,16 @@ export default function MainPage(){
                 </div>
                 <div className="flex flex-col w-full">
                     {/* NavHeader */}
+                    <div className="max-sm:hidden">
                         <NavBar direction={false} activTab={activTab} setActiveTab={setActiveTab} />
+                    </div>
+                    {/* MobileMenu */}
+                    <div className="w-20 max-h-[800px] h-full fixed top-10 z-50 sm:hidden ">
+                        <MobileMenu activTab={activTab} setActiveTab={scrollToSection}/>
+                    </div>
                     {/* MainBody */}
                     <div
-                        className="w-full min-w-6xl h-[93vh] bg-[#242424] bg-center"
+                        className="w-full min-w-6xl h-[93vh] bg-[#242424] bg-center max-sm:hidden"
                         style={{
                             backgroundImage: `url(${BgImage})`,
                             backgroundSize: '100% 100%',
@@ -158,6 +214,14 @@ export default function MainPage(){
                             <ExperienceSection />
                             </AnimatedPage>
                         )}
+                    </div>
+                    <div className="flex-col flex space-y-10 sm:hidden  overflow-y-auto scroll-smooth">                        
+                        <div ref={mainRef}><MainSection btn={setActiveTab}/></div>
+                        <div ref={aboutRef}><AboutSection /></div>
+                        <div ref={skillsRef}><SkillsSection /></div>
+                        <div ref={experienceRef}><ExperienceSection /></div>
+                        <div ref={projectsRef}><ProjectSection /></div>
+                        <div ref={contactRef}><ContactSection /></div>
                     </div>
 
                 </div>

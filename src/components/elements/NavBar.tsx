@@ -15,16 +15,18 @@ type NavbarProps = {
 export default function Navbar({direction, activTab, setActiveTab }: NavbarProps){
 
     return(
-        <ul className={`flex ${direction ? "flex-col w-full space-y-2" : "flex-row justify-start"}   text-xl`}
+        <ul className={`flex ${direction ? "flex-col w-full space-y-2" : "flex-row justify-start"}   text-xl max-sm:justify-start`}
         >
          <li
         className={`flex space-x-1 px-2 hover:bg-[#292929] hover:cursor-pointer hover:text-[#fff] active:bg-[#292929] ${
           activTab === "welcome" ? "bg-[#292929] text-white" : ""
-        }`}
+        } max-sm:size-full`}
         onClick={() => setActiveTab("welcome")}
       >
-        <img src={IconVScode} alt="VS code icon" className="mr-2" />
+        <img src={IconVScode} alt="VS code icon" className="size-6 mr-2 max-sm:size-12 max-sm:mr-0" />
+        <span className='max-sm:hidden'>
         Welcome
+        </span>
       </li>
       <li
         className={`flex space-x-1 px-2 hover:bg-[#292929] hover:cursor-pointer hover:text-[#fff] active:bg-[#292929] ${
@@ -32,8 +34,10 @@ export default function Navbar({direction, activTab, setActiveTab }: NavbarProps
         }`}
         onClick={() => setActiveTab("about")}
       >
-        <img src={IconHTML} alt="HTML icon" className="mr-2" />
-        about.html
+        <img src={IconHTML} alt="HTML icon" className="size-6 mr-2 max-sm:size-12 max-sm:mr-0" />
+        <span className='max-sm:hidden'>
+          about.html
+        </span>
       </li>
       <li
         className={`flex space-x-1 px-2 hover:bg-[#292929] hover:cursor-pointer hover:text-[#fff] active:bg-[#292929] ${
@@ -41,8 +45,10 @@ export default function Navbar({direction, activTab, setActiveTab }: NavbarProps
         }`}
         onClick={() => setActiveTab("experience")}
       >
-        <img src={IconReact} alt="React icon" className="mr-2" />
-        experience.tsx
+        <img src={IconReact} alt="React icon" className="size-6 mr-2 max-sm:size-12 max-sm:mr-0" />
+        <span className='max-sm:hidden'>
+          experience.tsx
+        </span>
       </li>
       <li
         className={`flex space-x-1 px-2 hover:bg-[#292929] hover:cursor-pointer hover:text-[#fff] active:bg-[#292929] ${
@@ -50,8 +56,10 @@ export default function Navbar({direction, activTab, setActiveTab }: NavbarProps
         }`}
         onClick={() => setActiveTab("skills")}
       >
-        <img src={IconScss} alt="Scss icon" className="mr-2" />
-        skills.scss
+        <img src={IconScss} alt="Scss icon" className="size-6 mr-2 max-sm:size-12 max-sm:mr-0" />
+        <span className='max-sm:hidden'>
+          skills.scss
+        </span>
       </li>
       <li
         className={`flex space-x-1 px-2 hover:bg-[#292929] hover:cursor-pointer hover:text-[#fff] active:bg-[#292929] ${
@@ -59,8 +67,10 @@ export default function Navbar({direction, activTab, setActiveTab }: NavbarProps
         }`}
         onClick={() => setActiveTab("projects")}
       >
-        <img src={IconJson} alt="Json icon" className="mr-2" />
-        projects.json
+        <img src={IconJson} alt="Json icon" className="size-6 mr-2 max-sm:size-12 max-sm:mr-0 " />
+        <span className='max-sm:hidden'>
+          projects.json
+        </span>
       </li>
       <li
         className={`flex space-x-1 px-2 hover:bg-[#292929] hover:cursor-pointer hover:text-[#fff] active:bg-[#292929] ${
@@ -68,8 +78,10 @@ export default function Navbar({direction, activTab, setActiveTab }: NavbarProps
         }`}
         onClick={() => setActiveTab("contact")}
       >
-        <img src={IconPython} alt="Python icon" className="mr-2" />
-        contact.py
+        <img src={IconPython} alt="Python icon" className="size-6 mr-2 max-sm:size-12 max-sm:mr-0" />
+        <span className='max-sm:hidden'>
+          contact.py
+        </span>
       </li>
        </ul>                 
     )

@@ -73,7 +73,7 @@ export default function ExperienceSection() {
     }, []);
 
     return (
-    <div className="w-full h-full flex justify-around overflow-y-auto text-[#d4d4d4] p-4 rounded-lg">
+    <div className="w-full sm:h-full flex justify-around sm:overflow-y-auto text-[#d4d4d4] p-4 rounded-lg max-sm:flex-col">
         <div ref={eduRef} className="flex flex-col">
             <h3 className="text-3xl font-bold text-[#ED816C]">Education</h3>
             <SyntaxHighlighter language="json"
