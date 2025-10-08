@@ -29,7 +29,7 @@ export default function MainPage(){
     const {setIsOpen} = useSendEmailForm()
 
     return(
-        <div className="h-[95vh]">
+        <div className="h-[95vh] w-full">
             <div className="flex items-center justify-between w-full">
                 <div className="flex items-center space-x-3 max-sm:hidden">
                     <div>

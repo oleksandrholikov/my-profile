@@ -23,7 +23,7 @@ export default function Navbar({direction, activTab, setActiveTab }: NavbarProps
         } max-sm:size-full`}
         onClick={() => setActiveTab("welcome")}
       >
-        <img src={IconVScode} alt="VS code icon" className="mr-2 max-sm:size-12 max-sm:mr-0" />
+        <img src={IconVScode} alt="VS code icon" className="size-6 mr-2 max-sm:size-12 max-sm:mr-0" />
         <span className='max-sm:hidden'>
         Welcome
         </span>
@@ -34,7 +34,7 @@ export default function Navbar({direction, activTab, setActiveTab }: NavbarProps
         }`}
         onClick={() => setActiveTab("about")}
       >
-        <img src={IconHTML} alt="HTML icon" className="mr-2 max-sm:size-12 max-sm:mr-0" />
+        <img src={IconHTML} alt="HTML icon" className="size-6 mr-2 max-sm:size-12 max-sm:mr-0" />
         <span className='max-sm:hidden'>
           about.html
         </span>
@@ -45,7 +45,7 @@ export default function Navbar({direction, activTab, setActiveTab }: NavbarProps
         }`}
         onClick={() => setActiveTab("experience")}
       >
-        <img src={IconReact} alt="React icon" className="mr-2 max-sm:size-12 max-sm:mr-0" />
+        <img src={IconReact} alt="React icon" className="size-6 mr-2 max-sm:size-12 max-sm:mr-0" />
         <span className='max-sm:hidden'>
           experience.tsx
         </span>
@@ -56,7 +56,7 @@ export default function Navbar({direction, activTab, setActiveTab }: NavbarProps
         }`}
         onClick={() => setActiveTab("skills")}
       >
-        <img src={IconScss} alt="Scss icon" className="mr-2 max-sm:size-12 max-sm:mr-0" />
+        <img src={IconScss} alt="Scss icon" className="size-6 mr-2 max-sm:size-12 max-sm:mr-0" />
         <span className='max-sm:hidden'>
           skills.scss
         </span>
@@ -67,7 +67,7 @@ export default function Navbar({direction, activTab, setActiveTab }: NavbarProps
         }`}
         onClick={() => setActiveTab("projects")}
       >
-        <img src={IconJson} alt="Json icon" className="mr-2 max-sm:size-12 max-sm:mr-0 " />
+        <img src={IconJson} alt="Json icon" className="size-6 mr-2 max-sm:size-12 max-sm:mr-0 " />
         <span className='max-sm:hidden'>
           projects.json
         </span>
@@ -78,7 +78,7 @@ export default function Navbar({direction, activTab, setActiveTab }: NavbarProps
         }`}
         onClick={() => setActiveTab("contact")}
       >
-        <img src={IconPython} alt="Python icon" className="mr-2 max-sm:size-12 max-sm:mr-0" />
+        <img src={IconPython} alt="Python icon" className="size-6 mr-2 max-sm:size-12 max-sm:mr-0" />
         <span className='max-sm:hidden'>
           contact.py
         </span>
