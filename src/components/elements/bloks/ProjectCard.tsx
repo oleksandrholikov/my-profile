@@ -15,11 +15,11 @@ export default function ProjectCard({ project }: { project: Project }) {
         <img
           src={project.image}
           alt={project.title}
-          className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-20"
+          className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-20 max-sm:opacity-30"
         />
       </div>
 
-      <div className="relative z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <div className="relative z-10 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-300 ">
         <p className="text-xl text-white mb-2">{project.description}</p>
         <div className="flex flex-wrap gap-2">
           {project.techs.map((tech, i) => (

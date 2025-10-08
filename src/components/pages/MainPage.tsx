@@ -165,9 +165,9 @@ export default function MainPage(){
                         <MainSection btn={setActiveTab}/>                        
                         <AboutSection />
                         <SkillsSection />
-                        {/* <ProjectSection />
-                        <ContactSection />
-                        <ExperienceSection /> */}
+                        <ExperienceSection />
+                        <ProjectSection />
+                        {/* <ContactSection /> */}
 
                     </div>
 
