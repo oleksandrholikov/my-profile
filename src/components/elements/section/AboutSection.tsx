@@ -78,6 +78,7 @@ export default function AboutSection(){
         <div className="flex flex-col w-full h-full items-center justify-start p-2 sm:overflow-y-auto max-sm:space-y-3 max-sm:min-h-dvh">
             <div className="flex flex-col items-start space-y-2 w-full">
                 <h1 className="text-4xl font-bold text-white max-sm:hidden">Oleksandr Holikov</h1>
+                <h1 className='text-2xl font-bold text-[#ED816C] self-end sm:hidden'>About Me</h1>
                 <p className="text-2xl font-semibold text-[#CE9178] max-sm:hidden ">Full Stack Web Developer</p>
                 <p ref={textRef} className="text-xl text-white max-sm:text-center">
                     To me, programming is like solving a complex puzzle: at first, it may look chaotic, but with patience and attention to detail, each piece clicks into place. It’s a creative process rooted in logic — where you build something meaningful from nothing.

@@ -1,4 +1,4 @@
-import {  useState } from "react";
+import {  useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedPage from "@components/pages/AnimatedPage"
 
@@ -25,8 +25,62 @@ import {useSendEmailForm} from "@contexts/SendEmailContext"
 
 export default function MainPage(){
     const [activTab, setActiveTab] = useState<string>('welcome');
-    const [dropDown, setDropDown] =useState<Boolean>(true)
-    const {setIsOpen} = useSendEmailForm()
+    const [dropDown, setDropDown] =useState<Boolean>(true);
+    const {setIsOpen} = useSendEmailForm();
+    const mainRef = useRef<HTMLDivElement | null>(null);
+    const aboutRef = useRef<HTMLDivElement | null>(null);
+    const skillsRef = useRef<HTMLDivElement | null>(null);
+    const experienceRef = useRef<HTMLDivElement | null>(null);
+    const projectsRef = useRef<HTMLDivElement | null>(null);
+    const contactRef = useRef<HTMLDivElement | null>(null);
+
+
+    useEffect(() => {
+  const sections = [
+    { id: "welcome", ref: mainRef },
+    { id: "about", ref: aboutRef },
+    { id: "skills", ref: skillsRef },
+    { id: "experience", ref: experienceRef },
+    { id: "projects", ref: projectsRef },
+    { id: "contact", ref: contactRef },
+  ];
+
+  const handleScroll = () => {
+    if (window.innerWidth >= 640) return;
+        for (let section of sections) {
+        const el = section.ref.current;
+        if (!el) continue;
+
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+            setActiveTab(section.id);
+            break;
+        }
+        }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    const scrollToSection = (section: string) => {
+    const refs: Record<string, React.RefObject<HTMLDivElement | null>> = {
+        welcome: mainRef,
+        about: aboutRef,
+        skills: skillsRef,
+        experience: experienceRef,
+        projects: projectsRef,
+        contact: contactRef,
+    };
+
+    const element = refs[section]?.current;
+    if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+    }
+
+    setActiveTab(section);
+    };
+
 
     return(
         <div className="h-[95vh] w-full">
@@ -120,7 +174,7 @@ export default function MainPage(){
                     </div>
                     {/* MobileMenu */}
                     <div className="w-20 max-h-[800px] h-full fixed top-10 z-50 sm:hidden ">
-                        <MobileMenu activTab={activTab} setActiveTab={setActiveTab}/>
+                        <MobileMenu activTab={activTab} setActiveTab={scrollToSection}/>
                     </div>
                     {/* MainBody */}
                     <div
@@ -161,13 +215,13 @@ export default function MainPage(){
                             </AnimatedPage>
                         )}
                     </div>
-                    <div className="flex-col flex space-y-10 sm:hidden  overflow-y-auto">                        
-                        <MainSection btn={setActiveTab}/>                        
-                        <AboutSection />
-                        <SkillsSection />
-                        <ExperienceSection />
-                        <ProjectSection />
-                        <ContactSection />
+                    <div className="flex-col flex space-y-10 sm:hidden  overflow-y-auto scroll-smooth">                        
+                        <div ref={mainRef}><MainSection btn={setActiveTab}/></div>
+                        <div ref={aboutRef}><AboutSection /></div>
+                        <div ref={skillsRef}><SkillsSection /></div>
+                        <div ref={experienceRef}><ExperienceSection /></div>
+                        <div ref={projectsRef}><ProjectSection /></div>
+                        <div ref={contactRef}><ContactSection /></div>
                     </div>
 
                 </div>
