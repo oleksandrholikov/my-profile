@@ -72,7 +72,7 @@ export default function SendSmsForm(){
             
             <form
               onSubmit={handleSubmit}
-              className="relative w-full max-w-lg mx-auto flex flex-col gap-4 bg-[#1e1e1e] p-6 rounded-2xl border border-[#3c3c3c] shadow-lg"
+              className="relative w-full max-w-md sm:max-w-lg mx-auto flex flex-col gap-4 bg-[#1e1e1e] p-6 rounded-2xl border border-[#3c3c3c] shadow-lg"
             >
               <h2 className="text-xl font-semibold text-[#d4d4d4]">Send me a message</h2>
               <div className='absolute top-3 right-3 hover:cursor-pointer hover:scale-110 max-w-8'>

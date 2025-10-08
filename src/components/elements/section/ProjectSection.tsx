@@ -59,7 +59,7 @@ export default function ProjectSection(){
   }, [])
 
     return(
-        <div className=" flex  flex-col  justify-start gap-2 p-2 h-full w-full sm:overflow-y-auto max-sm:items-end">
+        <div className=" flex  flex-col  justify-start gap-2 p-2 sm:h-full w-full sm:overflow-y-auto max-sm:items-end">
             <h2 className="text-4xl sm:self-start font-bold text-[#ED816C] max-sm:text-center">My projects</h2>
             <p ref={textRef} className="text-2xl max-w-2xl sm:self-start text-white max-sm:text-center" id="text">
                 Below are some of my latest projects. More projects are available on my  

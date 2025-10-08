@@ -167,8 +167,7 @@ export default function MainPage(){
                         <SkillsSection />
                         <ExperienceSection />
                         <ProjectSection />
-                        {/* <ContactSection /> */}
-
+                        <ContactSection />
                     </div>
 
                 </div>
