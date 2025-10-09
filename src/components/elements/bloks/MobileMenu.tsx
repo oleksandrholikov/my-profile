@@ -4,8 +4,7 @@ import IconBurger from "@/assets/icons/icon-burger.png";
 import IconGit from '@assets/icons/icon-github.png'
 import IconLetter from '@assets/icons/icon-letter.png'
 import IconLinkEdin from '@assets/icons/icon-linkedin.png'
-// import IconProfil from '@assets/icons/icon-profile.png'
-import IconCV from '@assets/icons/icon-cv.png'
+import IconProfil from '@assets/icons/icon-profile.png'
 
 import Navbar from "@components/elements/NavBar";
 import {useSendEmailForm} from "@contexts/SendEmailContext";
@@ -116,7 +115,7 @@ export default function BurgerMenu({activTab, setActiveTab }: NavbarProps) {
                             href="/my-profile/files/CV-HOLIKOV-Oleksandr.pdf"
                             target="_blank"
                             title="Go to My CV"
-                        ><img src={IconCV} alt="Icon my CV" className="w-full" /></a>
+                        ><img src={IconProfil} alt="Icon my CV" className="w-full" /></a>
           </div>
       </div>    
      

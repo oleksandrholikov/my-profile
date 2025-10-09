@@ -216,7 +216,7 @@ export default function MainPage(){
                         )}
                     </div>
                     <div className="flex-col flex space-y-10 sm:hidden  overflow-y-auto scroll-smooth">                        
-                        <div ref={mainRef}><MainSection btn={setActiveTab}/></div>
+                        <div ref={mainRef}><MainSection btn={scrollToSection}/></div>
                         <div ref={aboutRef}><AboutSection /></div>
                         <div ref={skillsRef}><SkillsSection /></div>
                         <div ref={experienceRef}><ExperienceSection /></div>
